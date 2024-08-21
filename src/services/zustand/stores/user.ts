@@ -1,7 +1,7 @@
-import { create } from 'zustand'
-import { persist, createJSONStorage } from 'zustand/middleware'
+import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { STORE_NAME } from '@/data/constants/store-name';
-
 interface UserStoreState {
   age: number;
   incrementAge: () => void;
@@ -17,7 +17,7 @@ export const useUserStore = create(
     }),
     {
       name: STORE_NAME.USER,
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(() => AsyncStorage),
     },
   ),
-)
+);
