@@ -1,5 +1,5 @@
 import { useAuth } from '@/services/redux/ducks/auth';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { useSelector } from 'react-redux';
 
 const Navigation = (): any => {
@@ -8,6 +8,9 @@ const Navigation = (): any => {
   return (
     <>
       <View>
+        <Text>
+          HELLO WORLD
+        </Text>
       </View>
     </>
   );
