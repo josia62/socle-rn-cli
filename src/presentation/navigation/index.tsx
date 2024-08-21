@@ -7,7 +7,7 @@ const Navigation = (): any => {
   const {updateAccessToken} = useAuth();
   return (
     <>
-      <View>
+      <View className="flex-1 items-center justify-center bg-white">
         <Text>
           HELLO WORLD
         </Text>
