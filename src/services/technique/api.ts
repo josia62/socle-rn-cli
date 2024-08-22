@@ -57,19 +57,12 @@ const serveurStatus = (status: any) => {
   ) {}
 };
 
-export const get = async (url: string, token: string, data?: any) => {
+export const get = async (url: string, token: string) => {
   try {
     let res;
-    if (!data) {
-      res = await axios.get(url, {
+    res = await axios.get(url, {
         headers: token ? headers(token) : headers(),
-      });
-    } else {
-      res = await axios.get(url, {
-        headers: token ? headers(token) : headers(),
-        params: data,
-      });
-    }
+    });
     return res.data;
   } catch (error) {
     return catchError(error);

@@ -1,11 +1,8 @@
-interface Config {
-  baseUrl: string;
-  hashkey: string;
-}
+import Config from 'react-native-config';
 
-const config: Config = {
-  baseUrl: import.meta.env.VITE_PUBLIC_URL_BACK,
-  hashkey: import.meta.env.VITE_PUBLIC_HASH_KEY,
+const config = {
+  urlBack: Config.URL_BACK,
+  hashkey:Config.HASH_KEY,
 };
 
 export default config;

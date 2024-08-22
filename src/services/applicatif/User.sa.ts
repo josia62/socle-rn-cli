@@ -11,14 +11,20 @@ export const UserSA = () => {
     getUsers, updateUserById
   } = UserBDL();
   const queryClient = useQueryClient();
-  const getUsersSA = async () => {
-    return  useQuery({
+  const getUsersSA = () => {
+    const { isPending, error, data, isFetching } = useQuery({
       queryKey: [USER_QUERY_KEY.USER],
       queryFn: getUsers,
       staleTime: 10000,
       refetchOnWindowFocus: false,
       refetchInterval: 30000,
-    })
+    });
+    return {
+      isPending,
+      error,
+      data,
+      isFetching
+    }
   }
 
   const updateUserConnected = useMutation({
