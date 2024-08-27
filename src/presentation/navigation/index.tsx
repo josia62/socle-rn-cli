@@ -1,9 +1,9 @@
-import ExampleScreen from '../screens/protected/ExampleScreen';
+import FormScreen from '../screens/protected/FormScreen';
 
 const Navigation = (): any => {
   return (
     <>
-      <ExampleScreen />
+      <FormScreen />
     </>
   );
 };
