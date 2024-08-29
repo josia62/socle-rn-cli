@@ -7,3 +7,16 @@ export const packages = [
 ];
 
 export const sexDatas = [ 'male', 'female']
+
+export const itemsSelect = [
+  { name: 'Apple' },
+  { name: 'Pear' },
+  { name: 'Blackberry' }, 
+]
+
+export const itemsRadio = [
+  { value: '2', title: 'Second value' },
+  { value: '3', title: 'Third value' },
+  { value: '4', title: 'Fourth value' },
+];
+
