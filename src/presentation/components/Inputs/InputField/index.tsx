@@ -48,7 +48,7 @@ export const InputField = ({ name, title, type, control, errors, defaultValue = 
   return (
     <YStack overflow="hidden" padding="$2">
       <YStack>
-        <Label width={90} htmlFor={name}>
+        <Label htmlFor={name}>
           {title}
         </Label>
         <Controller

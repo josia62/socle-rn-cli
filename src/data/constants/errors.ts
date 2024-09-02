@@ -3,4 +3,5 @@ export const INPUT_ERRORS = {
  EMAIL_ERROR:  "Please enter a valid email address.",
  SELECT_ERROR:  "Please select a value",
  DATE_PICK_ERROR:  "Please pick a date",
+ CHECK_BOX_ERROR:  "Please check a response",
 };
