@@ -11,7 +11,7 @@ export const defaultExampleRequest  = {
   email: "",
   sex: "",
   agreeToTerms: false,
-  selectedOption: '',
+  selectedOption: '3',
 }
 
 export const EXAMPLE_FIELD  = {
