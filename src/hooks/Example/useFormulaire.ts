@@ -6,17 +6,24 @@ import { formSchema } from "@/common/validator/zod/example.validator";
 import { defaultExampleRequest } from '@/data/dto/example/example-request.dto';
 
 export const useFormulaire = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: defaultExampleRequest 
+    defaultValues: defaultExampleRequest,
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) =>  {
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
-  }
+  };
+
+  const submitForm = handleSubmit(onSubmit);
 
   return {
-      form,
-      onSubmit
-  }
+    control,
+    errors,
+    submitForm,
+  };
 };
