@@ -1,7 +1,7 @@
 export type ExampleRequestDTO = {
-  id:string
+  username:string
   email: string;
-  password: string;
+  sex: string;
 };
 
 export const defaultExampleRequest  = {

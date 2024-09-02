@@ -9,13 +9,14 @@ interface Props {
     items: any,
     val: string,
     setVal: any,
+    defaultValue?: string,
 }
 
-export const SelectTamagui = ({props, items, val, setVal} : Props) => {
+export const SelectTamagui = ({props, items, val, setVal, defaultValue = ''} : Props) => {
     return (
       <Select value={val} onValueChange={setVal} disablePreventBodyScroll {...props}>
         <Select.Trigger width={220} iconAfter={ChevronDown}>
-          <Select.Value placeholder={items[0].name} />
+          <Select.Value placeholder={defaultValue} />
         </Select.Trigger>
   
         <Adapt when="sm" platform="touch">
@@ -67,7 +68,7 @@ export const SelectTamagui = ({props, items, val, setVal} : Props) => {
             minWidth={200}
           >
             <Select.Group>
-              <Select.Label>Fruits</Select.Label>
+              <Select.Label>Veuillez sélectionner une valeur</Select.Label>
               {React.useMemo(
                 () =>
                   items.map((item: any, i: any) => {

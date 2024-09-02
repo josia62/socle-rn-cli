@@ -11,17 +11,17 @@ interface Props {
   type: string;
   control: Control<any>;
   errors: any;
-  placeHolder?: string;
+  defaultValue?: string;
 }
 
-export const InputField = ({ name, title, type, placeHolder = '', control, errors }: Props) => {
+export const InputField = ({ name, title, type, control, errors, defaultValue = '' }: Props) => {
 
   const renderInput = (onChange: (value: string) => void, onBlur: () => void, value: string): React.JSX.Element => {
     switch (type) {
       case INPUT_TYPE.SIMPLE:
         return (
           <Input
-            placeholder={placeHolder}
+            placeholder={defaultValue}
             borderWidth={2}
             focusStyle={{ borderColor: 'black' }}
             onChangeText={onChange}
@@ -32,7 +32,7 @@ export const InputField = ({ name, title, type, placeHolder = '', control, error
       case INPUT_TYPE.TEXT_AREA:
         return (
           <TextArea
-            placeholder={placeHolder}
+            placeholder={defaultValue}
             borderWidth={2}
             focusStyle={{ borderColor: 'black' }}
             onChangeText={onChange}

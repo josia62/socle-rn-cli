@@ -12,9 +12,10 @@ interface Props {
   items: any;
   control: Control<any>;
   errors: any;
+  defaultValue?: string;
 }
 
-export const InputSelect = ({name, title, items, control, errors}: Props) => {
+export const InputSelect = ({name, title, items, control, errors, defaultValue}: Props) => {
   return (
     <YStack
       overflow="hidden"
@@ -29,7 +30,7 @@ export const InputSelect = ({name, title, items, control, errors}: Props) => {
           name={name}
           render={({ field: { onChange, value } }) => (
         <SelectTamagui props={{id: name, native: true }}  items={items} val={value}
-         setVal={onChange} />
+         setVal={onChange} defaultValue={defaultValue} />
           )}
           />
         {errors[name] && (

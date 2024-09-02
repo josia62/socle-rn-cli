@@ -9,9 +9,8 @@ export const packages = [
 export const sexDatas = [ 'male', 'female']
 
 export const itemsSelect = [
-  { name: 'Apple' },
-  { name: 'Pear' },
-  { name: 'Blackberry' }, 
+  { name: 'male' },
+  { name: 'female' }, 
 ]
 
 export const itemsRadio = [
