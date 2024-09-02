@@ -3,6 +3,7 @@ import { Check, ChevronDown, ChevronUp } from '@tamagui/lucide-icons'
 import type { SelectProps } from 'tamagui'
 import { Adapt, Label, Select, Sheet, XStack, YStack } from 'tamagui'
 import { LinearGradient } from 'tamagui/linear-gradient'
+import { INPUT_SELECT } from '@/data/constants/strings'
 
 interface Props {
     props: SelectProps,
@@ -68,7 +69,7 @@ export const SelectTamagui = ({props, items, val, setVal, defaultValue = ''} : P
             minWidth={200}
           >
             <Select.Group>
-              <Select.Label>Veuillez sélectionner une valeur</Select.Label>
+              <Select.Label>{INPUT_SELECT.SELECT_VALUE}</Select.Label>
               {React.useMemo(
                 () =>
                   items.map((item: any, i: any) => {
