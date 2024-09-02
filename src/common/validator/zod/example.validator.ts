@@ -13,5 +13,8 @@ export const formSchema = z.object({
   }),
   agreeToTerms: z.boolean({
     message: INPUT_ERRORS.CHECK_BOX_ERROR,
-  })
+  }),
+  selectedOption: z.string().min(1, {
+    message: INPUT_ERRORS.RADIO_GROUP_ERROR,
+  }),
 });

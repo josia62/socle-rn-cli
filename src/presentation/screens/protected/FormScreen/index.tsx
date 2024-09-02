@@ -10,6 +10,7 @@ import { itemsSelect, itemsRadio } from '@/data/constants/data';
 import { useFormulaire } from '@/hooks/Example/useFormulaire';
 import { CustomButton } from '@/presentation/components/CustomButton';
 import { BUTTON_TITLE } from '@/data/constants/strings';
+import { RadioElement } from '@/presentation/components/Inputs/RadioGroup';
 
 const FormScreen = () => {
   const { control, errors, submitForm } = useFormulaire();
@@ -23,6 +24,12 @@ const FormScreen = () => {
         title={EXAMPLE_TITLE.AGREE_TO_TERMS}
         control={control}
         name={EXAMPLE_FIELD.AGREE_TO_TERMS}
+        errors={errors}
+      />
+       <RadioElement
+        name={EXAMPLE_FIELD.SELECTED_OPTION}
+        data={itemsRadio}
+        control={control}
         errors={errors}
       />
       <CustomButton title={BUTTON_TITLE.SUBMIT} icon={Airplay} onPress={submitForm}/>

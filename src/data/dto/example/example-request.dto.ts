@@ -2,21 +2,24 @@ export type ExampleRequestDTO = {
   username:string
   email: string;
   sex: string;
-  agreeToTerms: boolean
+  agreeToTerms: boolean,
+  selectedOption: string,
 };
 
 export const defaultExampleRequest  = {
   username: "",
   email: "",
   sex: "",
-  agreeToTerms: false
+  agreeToTerms: false,
+  selectedOption: '',
 }
 
 export const EXAMPLE_FIELD  = {
   USER_NAME: 'username',
   EMAIL: 'email',
   SEX: 'sex',
-  AGREE_TO_TERMS: "agreeToTerms"
+  AGREE_TO_TERMS: "agreeToTerms",
+  SELECTED_OPTION: 'selectedOption',
 }
 
 

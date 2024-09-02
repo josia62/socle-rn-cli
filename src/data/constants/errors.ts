@@ -4,4 +4,5 @@ export const INPUT_ERRORS = {
  SELECT_ERROR:  "Please select a value",
  DATE_PICK_ERROR:  "Please pick a date",
  CHECK_BOX_ERROR:  "Please check a response",
+ RADIO_GROUP_ERROR:  "Please check a response",
 };
