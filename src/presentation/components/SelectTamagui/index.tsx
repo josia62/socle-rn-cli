@@ -15,7 +15,7 @@ export const SelectTamagui = ({props, items, val, setVal} : Props) => {
     return (
       <Select value={val} onValueChange={setVal} disablePreventBodyScroll {...props}>
         <Select.Trigger width={220} iconAfter={ChevronDown}>
-          <Select.Value placeholder="Something" />
+          <Select.Value placeholder={items[0].name} />
         </Select.Trigger>
   
         <Adapt when="sm" platform="touch">
