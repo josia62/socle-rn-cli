@@ -11,11 +11,15 @@ import { useFormulaire } from '@/hooks/Example/useFormulaire';
 import { CustomButton } from '@/presentation/components/CustomButton';
 import { BUTTON_TITLE } from '@/data/constants/strings';
 import { RadioElement } from '@/presentation/components/Inputs/RadioGroup';
+import { Loader } from '@/presentation/components/Loader';
+import { useState } from 'react';
 
 const FormScreen = () => {
   const { control, errors, submitForm } = useFormulaire();
+  const [isLoading, setIsLoading] = useState(false)
   return (
-    <View className="mx-5">
+    <View style={{ height: '100%', width: '100%'}}>
+      {isLoading && <Loader />}
       <InputField title={EXAMPLE_TITLE.USER_NAME} type={INPUT_TYPE.SIMPLE} name={EXAMPLE_FIELD.USER_NAME} control={control} errors={errors}/>
       <InputField title={EXAMPLE_TITLE.EMAIL} type={INPUT_TYPE.SIMPLE} name={EXAMPLE_FIELD.EMAIL} control={control} errors={errors} />
       <InputSelect title={EXAMPLE_TITLE.SEX} items={itemsSelect} name={EXAMPLE_FIELD.SEX} control={control} errors={errors} defaultValue={itemsSelect[0].name} />
