@@ -4,6 +4,8 @@ export const HOME = {
 
 export const BUTTON_TITLE = {
   SUBMIT: 'Envoyer',
+  OK: 'Ok',
+  CANCEL: "Annuler"
 };
 
 export const INPUT_TEXT = {
@@ -12,4 +14,9 @@ export const INPUT_TEXT = {
 
 export const INPUT_SELECT= {
   SELECT_VALUE: 'Veuillez sélectionner une valeur',
+};
+
+export const TEST_MESSAGE= {
+  TITLE_POPUP: 'Attention',
+  MESSAGE_POPUP: "Est-ce que vous pouvez confirmer ?",
 };
