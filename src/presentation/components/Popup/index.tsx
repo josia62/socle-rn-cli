@@ -48,11 +48,11 @@ export const Popup = ({ title, message, onPress, onCancel } : Props) => {
               {message}
             </AlertDialog.Description>
             <XStack gap="$3" justifyContent="flex-end">
-              <AlertDialog.Cancel asChild>
-                <Button onPress={onCancel} >{BUTTON_TITLE.CANCEL}</Button>
+              <AlertDialog.Cancel onPress={onCancel} asChild>
+                <Button  >{BUTTON_TITLE.CANCEL}</Button>
               </AlertDialog.Cancel>
-              <AlertDialog.Action asChild>
-                <Button onPress={onPress} theme="active">{BUTTON_TITLE.OK}</Button>
+              <AlertDialog.Action onPress={onPress} asChild>
+                <Button theme="active">{BUTTON_TITLE.OK}</Button>
               </AlertDialog.Action>
             </XStack>
           </YStack>
