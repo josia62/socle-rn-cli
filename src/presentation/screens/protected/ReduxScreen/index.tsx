@@ -1,21 +1,33 @@
-import { useSelector } from 'react-redux';
-import { View, Text } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import { View, Text, Button } from 'react-native';
 
-import { userActions } from '@/services/zustand/actions/user';
-import { userStates } from '@/services/zustand/states/user';
 import { HOME } from '@/data/constants/strings';
-import { useAuth } from '@/services/redux/ducks/auth';
+import { selectAge, selectToken } from '@/services/redux/reducers/selectors/exampleSelectors';
+import { exampleAction } from '@/services/redux/reducers/actions/exampleAction';
+import { resetExample, updateAge, updateToken } from '@/services/redux/reducers/slices/exampleSlice';
 
 const ReduxScreen = () => {
-  const { credentials, accessToken, } = useSelector(({ auth }: any) => auth);
-  const {updateAccessToken} = useAuth();
-  const { age } = userStates();
-  const { incrementAge, handleUpdateAge } = userActions();
+  const age = useSelector(selectAge);
+  const token = useSelector(selectToken);
+  const dispatch = useDispatch();
+
+  const handleAction = async () => {
+    dispatch(exampleAction("token", 23));
+  }
+
+  const handleSlice = async () => {
+    dispatch(resetExample());
+  }
+  
   return (
     <View className="flex-1 items-center justify-center bg-white">
       <Text>
       {HOME.WELCOME}
       </Text>
+      <Button
+        title="Press me"
+        onPress={handleSlice}
+      />
     </View>
   );
 };

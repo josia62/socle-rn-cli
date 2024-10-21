@@ -1,9 +1,9 @@
-import TestScreen from '../screens/protected/TestScreen';
+import ReduxScreen from '../screens/protected/ReduxScreen';
 
 const Navigation = (): any => {
   return (
     <>
-      <TestScreen />
+      <ReduxScreen />
     </>
   );
 };
